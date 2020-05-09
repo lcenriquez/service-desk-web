@@ -21,15 +21,6 @@ class Breadcrumb extends Component {
     });
   };
 
-  componentWillReceiveProps = () => {
-    (navigation.items).map((item, index) => {
-      if (item.type && item.type === 'group') {
-        this.getCollapse(item);
-      }
-      return false;
-    });
-  };
-
   getCollapse = (item) => {
     if (item.children) {
       (item.children).filter(collapse => {
